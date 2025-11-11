@@ -37,7 +37,6 @@
     </style>
   </head>
   <body class="font-sans bg-gray-50 text-gray-800">
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -83,17 +82,59 @@
           <div class="-mr-2 flex items-center md:hidden">
             <button
               type="button"
+              id="mobile-menu-button"
               class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
-              <i class="fas fa-bars"></i>
+              <i class="fas fa-bars block h-6 w-6" id="icon-open"></i>
+              <i class="fas fa-times hidden h-6 w-6" id="icon-close"></i>
             </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+            >Report Issue</a
+          >
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+            >Browse Issues</a
+          >
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+            >How It Works</a
+          >
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+          <div class="flex flex-col space-y-2 px-4">
+            <a
+              href="https://wefix-psi.vercel.app/"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md font-medium text-center"
+              >Login</a
+            >
+            <a
+              href="https://wefix-psi.vercel.app/"
+              class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium text-center"
+              >Sign Up</a
+            >
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero-pattern">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div class="md:flex items-center">
@@ -133,7 +174,6 @@
       </div>
     </div>
 
-    <!-- How It Works Section -->
     <div class="bg-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -145,7 +185,6 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Step 1 -->
           <div
             class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow duration-300"
           >
@@ -163,7 +202,6 @@
             </p>
           </div>
 
-          <!-- Step 2 -->
           <div
             class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow duration-300"
           >
@@ -181,7 +219,6 @@
             </p>
           </div>
 
-          <!-- Step 3 -->
           <div
             class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow duration-300"
           >
@@ -202,7 +239,6 @@
       </div>
     </div>
 
-    <!-- Recent Issues Section -->
     <div class="bg-gray-50 py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-12">
@@ -218,7 +254,6 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Issue Card 1 -->
           <div
             class="bg-white rounded-lg overflow-hidden shadow-md issue-card transition-all duration-300"
           >
@@ -268,7 +303,6 @@
             </div>
           </div>
 
-          <!-- Issue Card 2 -->
           <div
             class="bg-white rounded-lg overflow-hidden shadow-md issue-card transition-all duration-300"
           >
@@ -318,7 +352,6 @@
             </div>
           </div>
 
-          <!-- Issue Card 3 -->
           <div
             class="bg-white rounded-lg overflow-hidden shadow-md issue-card transition-all duration-300"
           >
@@ -371,7 +404,6 @@
       </div>
     </div>
 
-    <!-- Stats Section -->
     <div class="bg-blue-500 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8 text-center">
@@ -395,7 +427,6 @@
       </div>
     </div>
 
-    <!-- Testimonials -->
     <div class="bg-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -493,7 +524,6 @@
       </div>
     </div>
 
-    <!-- CTA Section -->
     <div class="bg-primary py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-bold text-white mb-6">
@@ -522,7 +552,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
@@ -630,18 +659,29 @@
     </footer>
 
     <script>
-      // Simple script for mobile menu toggle (would be expanded in a real implementation)
+      // MODIFIED: Updated script to toggle mobile menu and icons
       document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.querySelector(
-          '[aria-controls="mobile-menu"]'
-        );
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
+        const iconOpen = document.getElementById("icon-open");
+        const iconClose = document.getElementById("icon-close");
 
-        mobileMenuButton.addEventListener("click", function () {
-          const expanded = this.getAttribute("aria-expanded") === "true";
-          this.setAttribute("aria-expanded", !expanded);
-          mobileMenu.classList.toggle("hidden");
-        });
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", function () {
+            const expanded =
+              this.getAttribute("aria-expanded") === "true" || false;
+            this.setAttribute("aria-expanded", !expanded);
+
+            // Toggle menu visibility
+            mobileMenu.classList.toggle("hidden");
+
+            // Toggle icon visibility
+            iconOpen.classList.toggle("hidden");
+            iconClose.classList.toggle("hidden");
+          });
+        }
+        // --- End Mobile Menu Toggle ---
 
         // Upvote functionality for issue cards
         document.querySelectorAll(".fa-thumbs-up").forEach((button) => {
